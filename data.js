@@ -1,9 +1,14 @@
 window.PORTFOLIO_DATA = {
   hero: {
-    kicker: "Statistics & Data Science",
     nameLines: ["Maximilian", "Frei"],
-    tagline: "I'm a Statistics & Data Science student and working in Global Analytics & BI at BIRKENSTOCK.",
+    tagline: "Statistics student at LMU Munich, currently on a semester abroad at the University of Barcelona. Below you’ll find my projects and research, as well as my work at Birkenstock.",
     profileImage: "assets/profile-image.jpg",
+    languages: [
+      { flag: "🇩🇪", label: "German", level: "Native" },
+      { flag: "🇬🇧", label: "English", level: "Native-level" },
+      { flag: "🇪🇸", label: "Spanish", level: "B2" },
+      { flag: "🇫🇷", label: "French", level: "B1" },
+    ],
   },
   links: {
     github: "https://github.com/maxifrei6",
@@ -28,14 +33,10 @@ window.PORTFOLIO_DATA = {
       institution: "LMU Munich",
       degree: "B.Sc. in Statistics & Data Science (Minor: Computer Science)",
       tags: [
-        "Seminar: microbial oceanic network communities",
-        "Circadian modeling: metabolite profiles (stroke patients)",
-        "World Bank Data Analysis in R",
         "Calculus I & II",
         "Linear Algebra",
         "Probability Theory",
         "Statistical Inference",
-        "R & Python",
         "Machine Learning",
         "Linear Modeling",
       ],
@@ -43,33 +44,35 @@ window.PORTFOLIO_DATA = {
     {
       period: "Oct 2022 — Sep 2023",
       institution: "Technical University of Munich",
-      degree: "B.Sc. in Management & Technology",
+      degree: "B.Sc. in Management & Technology — Switched to Statistics (did not complete)",
       tags: [
         "Management",
         "Finance",
         "Economics",
-        "Discovered passion for statistics & data",
       ],
     },
   ],
   experience: [
     {
       period: "Apr 2025 — Feb 2026",
-      company: "BIRKENSTOCK",
+      company: "Birkenstock",
       role: "Working Student · Global Analytics & BI",
-      tags: ["Forecasting", "Prophet", "XGBoost", "Python", "Data Warehouse", "Geospatial"],
+      tags: ["Prophet", "XGBoost", "Python", "SQL", "Data Warehouse", "Geospatial"],
       bullets: [
-        "Building a progressive ensemble for order forecasting using Prophet, XGBoost, and other statistical models, continuously improving predictive performance.",
+        "Created a lineage tracker mapping the full flow from data warehouse ingestion and staging to downstream usage on analytics platforms (e.g. Tableau), to monitor dependencies, data privacy, and access.",
+        "Used lineage documentation to support migration planning to Snowflake.",
+        "Built an automated Google PageSpeed tracker to assess performance improvements after the replatforming initiative.",
+        "Built a progressive ensemble for order forecasting using Prophet, XGBoost, and other statistical models, and continuously improved predictive performance.",
         "Performed correlation analysis on weather variables to select relevant features and integrated Weather API data to improve order forecast accuracy.",
-        "Optimizing data warehouse pipelines and creating tailored data sources for regional analysts.",
+        "Optimized data warehouse pipelines and created tailored data sources for regional analysts.",
         "Built geospatial order mapping, enabling spatial analysis and revealing regional demand patterns to improve forecasting.",
       ],
     },
     {
       period: "Mar 2023 — Mar 2025",
-      company: "BIRKENSTOCK",
+      company: "Birkenstock",
       role: "Working Student · Digital Operations Europe",
-      tags: ["Python", "Tableau", "Operations", "Analytics", "Contentsquare", "EPR"],
+      tags: ["Python", "Tableau", "Contentsquare", "Analytics", "EPR", "Logistics"],
       bullets: [
         "Automated invoice checks for inbound shipments using Python, saving 5 hours of manual work weekly.",
         "Processed customer service data with Python and developed Tableau dashboards to monitor claims and detect product faults, driving quicker resolutions.",
@@ -83,22 +86,6 @@ window.PORTFOLIO_DATA = {
     },
   ],
   projects: [
-    {
-      id: "1",
-      category: "Biostatistics",
-      title: "Stroke Circadian Metabolomics",
-      image: "assets/projects/stroke.png",
-      teaser:
-        "Circadian patterns in metabolomic data from stroke patients using pathway scores, multiple imputation, and Lasso regression.",
-      github: "https://github.com/maxifrei6/stroke-circadian",
-      pdf: "assets/pdf/stroke-circadian.pdf",
-      abstract:
-        "Analyzed circadian patterns in metabolomic data from stroke patients (LMU Hospital Großhadern) using pathway scores, multiple imputation (missForest, bootstrap), and Lasso regression to link metabolite and pathway levels with time-of-stroke (day vs. night).",
-      methodology:
-        "Built an R-based pipeline from raw data merge to figures and a LaTeX thesis. Applied pathway scoring, missForest and bootstrap for missing data, and Lasso regression for inference.",
-      results:
-        "Identified interpretable links between metabolite/pathway levels and time-of-stroke, with full reproducibility via R Markdown, Quarto, and LaTeX.",
-    },
     {
       id: "2",
       category: "Network Analysis",
@@ -114,6 +101,22 @@ window.PORTFOLIO_DATA = {
         "Interpreted modules with taxonomy and environmental variables (temperature, salinity, depth). Produced network visualizations and algorithm comparisons to support a seminar thesis in R and LaTeX.",
       results:
         "Clear comparison of community structure across oceans and methods, with visualizations and reproducible analysis on GitHub.",
+    },
+    {
+      id: "1",
+      category: "Biostatistics",
+      title: "Stroke Circadian Metabolomics",
+      image: "assets/projects/stroke.png",
+      teaser:
+        "Circadian patterns in metabolomic data from stroke patients using pathway scores, multiple imputation, and Lasso regression.",
+      github: "https://github.com/maxifrei6/stroke-circadian",
+      pdf: "assets/pdf/stroke-circadian.pdf",
+      abstract:
+        "Analyzed circadian patterns in metabolomic data from stroke patients (LMU Hospital Großhadern) using pathway scores, multiple imputation (missForest, bootstrap), and Lasso regression to link metabolite and pathway levels with time-of-stroke (day vs. night).",
+      methodology:
+        "Built an R-based pipeline from raw data merge to figures and a LaTeX thesis. Applied pathway scoring, missForest and bootstrap for missing data, and Lasso regression for inference.",
+      results:
+        "Identified interpretable links between metabolite/pathway levels and time-of-stroke, with full reproducibility via R Markdown, Quarto, and LaTeX.",
     },
     {
       id: "3",
@@ -147,4 +150,19 @@ window.PORTFOLIO_DATA = {
     },
   ],
   papers: [],
+  skills: {
+    languages: "hero",
+    technologies: [
+      "R (ggplot, dplyr, Quarto)",
+      "Python (NumPy, Pandas, Scikit-learn, PyTorch)",
+      "SQL",
+      "Microsoft Office",
+      "Tableau (incl. Prep Builder)",
+      "Power BI",
+      "Contentsquare",
+      "Jira & Confluence",
+      "GCP",
+      "AWS",
+    ],
+  },
 };

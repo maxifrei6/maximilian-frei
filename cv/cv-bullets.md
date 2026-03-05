@@ -34,10 +34,13 @@ Use this file as a pool of bullet points. Copy the lines you want into `main.tex
 
 ### BIRKENSTOCK — Global Analytics & BI (Apr 25 – Feb 26)
 
-- Building a progressive ensemble for order forecasting using Prophet, XGBoost, and other statistical models, continuously improving predictive performance.
-- Performed correlation analysis on weather variables to select relevant features for integrating Weather API data and improving order forecast accuracy
-- Optimizing data warehouse pipelines and creating tailored data sources for regional analysts
-- Built geospatial order mapping, enabling spatial analysis and revealingregional demand patterns to improve forecasting
+- Created a lineage tracker mapping the full flow from data warehouse ingestion and staging to downstream usage on analytics platforms (e.g. Tableau), to monitor dependencies, data privacy, and access.
+- Used lineage documentation to support migration planning to Snowflake.
+- Built an automated Google PageSpeed tracker to assess performance improvements after the replatforming initiative.
+- Built a progressive ensemble for order forecasting using Prophet, XGBoost, and other statistical models, and continuously improved predictive performance.
+- Performed correlation analysis on weather variables to select relevant features and integrated Weather API data to improve order forecast accuracy.
+- Optimized data warehouse pipelines and created tailored data sources for regional analysts.
+- Built geospatial order mapping, enabling spatial analysis and revealing regional demand patterns to improve forecasting.
 
 ### BIRKENSTOCK — Digital Operations Europe (Mar 23 – Mar 25)
 
@@ -99,7 +102,7 @@ Tools used: R, LaTeX, GitHub
 
 ### Technologies
 
-- Microsoft Office, R (ggplot, dplyr, quarto), Python (NumPy, Pandas, basic Scikit & PyTorch), Basic SQL, PowerBI, Tableau (incl. Prep Builder), Contentsquare (Web Analytics), Atlassian Suite (Jira, Confluence)
+- Microsoft Office, R (ggplot, dplyr, quarto), Python (NumPy, Pandas, basic Scikit & PyTorch), Basic SQL, PowerBI, Tableau (incl. Prep Builder), Contentsquare (Web Analytics), Atlassian Suite (Jira, Confluence), GCP, AWS
 
 ---
 

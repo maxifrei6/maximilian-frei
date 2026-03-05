@@ -23,6 +23,13 @@ body {
 h1, h2, h3, h4 { font-family: 'Source Serif 4', Georgia, serif; }
 
 .bg-background { background-color: var(--background); }
+
+/* Nav: solid white when scrolled so content underneath is fully hidden */
+#nav.nav-scrolled {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border);
+}
+
 .text-foreground { color: var(--foreground); }
 .text-muted-foreground { color: var(--muted-foreground); }
 .text-primary { color: var(--primary); }

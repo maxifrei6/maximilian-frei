@@ -24,22 +24,21 @@
 
   <main>
     <!-- Hero -->
-    <section class="pt-28 sm:pt-32 pb-16 sm:pb-20 px-6">
+    <section class="pt-28 sm:pt-32 pb-10 sm:pb-12 px-6">
       <div class="max-w-5xl mx-auto flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between gap-10">
         <div class="flex-1 min-w-0">
-          <p id="hero-kicker" class="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-4">Statistics &amp; Data Science</p>
           <h1 id="hero-name" class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-foreground">
             Maximilian<br />Frei
           </h1>
           <p id="hero-tagline" class="mt-5 text-lg sm:text-xl text-muted-foreground max-w-lg leading-relaxed font-light">
-            LMU Statistics and Data Science · Working Student Global Analytics &amp; BI at BIRKENSTOCK.
+            Statistics student at LMU Munich, currently on a semester abroad at the University of Barcelona. Below you’ll find my projects and research, as well as my work at Birkenstock.
           </p>
+          <div id="hero-languages" class="mt-4 flex flex-wrap gap-2" aria-label="Languages"></div>
           <div class="flex items-center gap-4 mt-6">
             <a id="hero-github" href="https://github.com/maxifrei6" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">GitHub</a>
             <a id="hero-linkedin" href="https://www.linkedin.com/in/maximilian-frei-30915424b/" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">LinkedIn</a>
-            <a id="hero-email" href="mailto:maxifrei@protonmail.com" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">Email</a>
+            <a id="hero-email" href="mailto:maxifrei@protonmail.com" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">maxifrei@protonmail.com</a>
           </div>
-          <div class="mt-6 h-px w-16 bg-primary"></div>
         </div>
         <div id="hero-photo-wrap" class="shrink-0 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full border border-border overflow-hidden bg-muted flex items-center justify-center">
           <img id="hero-photo" src="assets/profile-image.jpg" alt="Maximilian Frei" class="w-full h-full object-cover" />
@@ -49,34 +48,48 @@
     </section>
 
     <!-- Projects -->
-    <section id="work" class="py-20 px-6">
+    <section id="work" class="py-10 px-6">
       <div class="max-w-5xl mx-auto">
-        <p class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">Selected Work</p>
-        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-10">Research &amp; Projects</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-8">Research &amp; Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid"></div>
       </div>
     </section>
 
     <!-- Education -->
-    <section id="education" class="py-20 px-6">
+    <section id="education" class="py-10 px-6">
       <div class="max-w-5xl mx-auto">
-        <p class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">Academic Background</p>
-        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-10">Education</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-8">Education</h2>
         <div class="relative ml-4">
           <div class="absolute left-0 top-2 bottom-2 w-px bg-border"></div>
-          <div id="education-list" class="space-y-10"></div>
+          <div id="education-list" class="space-y-8"></div>
         </div>
       </div>
     </section>
 
     <!-- Experience -->
-    <section id="experience" class="py-20 px-6">
+    <section id="experience" class="py-10 px-6">
       <div class="max-w-5xl mx-auto">
-        <p class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">Career</p>
-        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-10">Experience</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-8">Experience</h2>
         <div class="relative ml-4">
           <div class="absolute left-0 top-2 bottom-2 w-px bg-border"></div>
-          <div id="experience-list" class="space-y-10"></div>
+          <div id="experience-list" class="experience-timeline"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-10 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-8">Skills</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <div>
+            <h3 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Languages</h3>
+            <div id="skills-languages" class="flex flex-wrap gap-2"></div>
+          </div>
+          <div>
+            <h3 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Technologies</h3>
+            <div id="skills-technologies" class="flex flex-wrap gap-2"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -111,12 +124,10 @@
       var projects = (data.projects && data.projects.length) ? data.projects : [];
 
       // Hero content
-      var heroKicker = document.getElementById('hero-kicker');
       var heroName = document.getElementById('hero-name');
       var heroTagline = document.getElementById('hero-tagline');
       var navLogo = document.getElementById('nav-logo');
 
-      if (heroKicker && hero.kicker) heroKicker.textContent = hero.kicker;
       if (heroName && hero.nameLines && hero.nameLines.length) {
         heroName.innerHTML = hero.nameLines.join('<br />');
       }
@@ -131,7 +142,43 @@
 
       if (githubLink && links.github) githubLink.href = links.github;
       if (linkedinLink && links.linkedin) linkedinLink.href = links.linkedin;
-      if (emailLink && links.email) emailLink.href = 'mailto:' + links.email;
+      if (emailLink && links.email) {
+        emailLink.href = 'mailto:' + links.email;
+        emailLink.textContent = links.email;
+      }
+      var heroLanguages = document.getElementById('hero-languages');
+      var heroFlags = (hero.languages && hero.languages.slice(0, 3).map(function (l) { return l.flag; })) || [];
+      if (heroLanguages && heroFlags && heroFlags.length) {
+        heroFlags.forEach(function (flag) {
+          var span = document.createElement('span');
+          span.className = 'text-2xl leading-none';
+          span.setAttribute('aria-hidden', 'true');
+          span.textContent = flag;
+          heroLanguages.appendChild(span);
+        });
+      }
+
+      var skills = data.skills || {};
+      var languagesList = (skills.languages === 'hero' ? hero.languages : skills.languages) || [];
+      var skillsLanguages = document.getElementById('skills-languages');
+      if (skillsLanguages && languagesList.length) {
+        languagesList.forEach(function (lang) {
+          var box = document.createElement('span');
+          box.setAttribute('title', lang.label + (lang.level ? ' — ' + lang.level : ''));
+          box.className = 'inline-flex items-center gap-2 border border-border rounded-md px-3 py-1.5 text-sm text-muted-foreground bg-muted/50';
+          box.innerHTML = '<span class="text-lg leading-none">' + lang.flag + '</span><span class="font-medium text-foreground">' + (lang.level || '') + '</span>';
+          skillsLanguages.appendChild(box);
+        });
+      }
+      var skillsTechnologies = document.getElementById('skills-technologies');
+      if (skillsTechnologies && skills.technologies && skills.technologies.length) {
+        skills.technologies.forEach(function (tech) {
+          var chip = document.createElement('span');
+          chip.className = 'text-[10px] font-normal text-muted-foreground border border-border rounded px-2 py-0.5';
+          chip.textContent = tech;
+          skillsTechnologies.appendChild(chip);
+        });
+      }
 
       var cvLink = document.getElementById('cv-download');
       if (cvLink && links.cvPdf) cvLink.href = links.cvPdf;
@@ -188,56 +235,88 @@
         });
       }
 
-      // Experience
+      // Experience (group same company: one line with two dots, company name once)
       var experienceList = document.getElementById('experience-list');
       if (experienceList && experience.length) {
-        experience.forEach(function (job) {
-          var wrapper = document.createElement('div');
-          wrapper.className = 'relative pl-8';
+        var groups = [];
+        var current = [experience[0]];
+        for (var g = 1; g < experience.length; g++) {
+          if (experience[g].company === experience[g - 1].company) {
+            current.push(experience[g]);
+          } else {
+            groups.push(current);
+            current = [experience[g]];
+          }
+        }
+        groups.push(current);
 
-          var dot = document.createElement('div');
-          dot.className = 'absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
-          wrapper.appendChild(dot);
+        groups.forEach(function (group, gi) {
+          var isGroup = group.length > 1;
+          var block = document.createElement('div');
+          block.className = 'relative pl-8' + (gi === 0 ? '' : ' mt-8');
 
-          var period = document.createElement('p');
-          period.className = 'text-xs text-muted-foreground mb-1';
-          period.textContent = job.period;
-          wrapper.appendChild(period);
-
-          var title = document.createElement('h3');
-          title.className = 'font-serif text-lg font-semibold text-foreground';
-          title.textContent = job.company;
-          wrapper.appendChild(title);
-
-          var role = document.createElement('p');
-          role.className = 'text-sm text-muted-foreground mt-0.5';
-          role.textContent = job.role;
-          wrapper.appendChild(role);
-
-          if (job.tags && job.tags.length) {
-            var tagsWrap = document.createElement('div');
-            tagsWrap.className = 'flex flex-wrap gap-1.5 mt-3';
-            job.tags.forEach(function (tag) {
-              var chip = document.createElement('span');
-              chip.className = 'text-[10px] font-normal text-muted-foreground border border-border rounded px-2 py-0.5';
-              chip.textContent = tag;
-              tagsWrap.appendChild(chip);
-            });
-            wrapper.appendChild(tagsWrap);
+          if (isGroup) {
+            var topDot = document.createElement('div');
+            topDot.className = 'absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
+            block.appendChild(topDot);
+            var companyTitle = document.createElement('h3');
+            companyTitle.className = 'font-serif text-lg font-semibold text-foreground mb-4';
+            companyTitle.textContent = group[0].company;
+            block.appendChild(companyTitle);
           }
 
-          if (job.bullets && job.bullets.length) {
-            var ul = document.createElement('ul');
-            ul.className = 'mt-3 list-disc text-sm text-muted-foreground ml-4 space-y-1';
-            job.bullets.forEach(function (b) {
-              var li = document.createElement('li');
-              li.textContent = b;
-              ul.appendChild(li);
-            });
-            wrapper.appendChild(ul);
-          }
+          group.forEach(function (job, ji) {
+            var roleBlock = document.createElement('div');
+            if (isGroup && ji > 0) roleBlock.className = 'relative mt-6';
+            if (!isGroup) {
+                var dot = document.createElement('div');
+                dot.className = 'absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
+                roleBlock.appendChild(dot);
+            }
+            if (isGroup && ji === 1) {
+              var secondDot = document.createElement('div');
+              secondDot.className = 'absolute -left-8 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
+              roleBlock.appendChild(secondDot);
+            }
+            var period = document.createElement('p');
+            period.className = 'text-xs text-muted-foreground mb-1';
+            period.textContent = job.period;
+            roleBlock.appendChild(period);
+            if (!isGroup) {
+              var title = document.createElement('h3');
+              title.className = 'font-serif text-lg font-semibold text-foreground';
+              title.textContent = job.company;
+              roleBlock.appendChild(title);
+            }
+            var role = document.createElement('p');
+            role.className = 'text-sm font-semibold text-neutral-600 mt-0.5';
+            role.textContent = job.role;
+            roleBlock.appendChild(role);
+            if (job.tags && job.tags.length) {
+              var tagsWrap = document.createElement('div');
+              tagsWrap.className = 'flex flex-wrap gap-1.5 mt-3';
+              job.tags.forEach(function (tag) {
+                var chip = document.createElement('span');
+                chip.className = 'text-[10px] font-normal text-muted-foreground border border-border rounded px-2 py-0.5';
+                chip.textContent = tag;
+                tagsWrap.appendChild(chip);
+              });
+              roleBlock.appendChild(tagsWrap);
+            }
+            if (job.bullets && job.bullets.length) {
+              var ul = document.createElement('ul');
+              ul.className = 'mt-3 list-disc text-sm text-muted-foreground ml-4 space-y-1';
+              job.bullets.forEach(function (b) {
+                var li = document.createElement('li');
+                li.textContent = b;
+                ul.appendChild(li);
+              });
+              roleBlock.appendChild(ul);
+            }
+            block.appendChild(roleBlock);
+          });
 
-          experienceList.appendChild(wrapper);
+          experienceList.appendChild(block);
         });
       }
 
@@ -300,9 +379,7 @@
 
       var nav = document.getElementById('nav');
       window.addEventListener('scroll', function () {
-        nav.classList.toggle('bg-background', window.scrollY > 20);
-        nav.classList.toggle('border-b', window.scrollY > 20);
-        nav.classList.toggle('border-border', window.scrollY > 20);
+        nav.classList.toggle('nav-scrolled', window.scrollY > 20);
       });
     })();
   </script>
