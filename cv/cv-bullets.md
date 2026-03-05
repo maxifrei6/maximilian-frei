@@ -102,7 +102,7 @@ Tools used: R, LaTeX, GitHub
 
 ### Technologies
 
-- Microsoft Office, R (ggplot, dplyr, quarto), Python (NumPy, Pandas, basic Scikit & PyTorch), Basic SQL, PowerBI, Tableau (incl. Prep Builder), Contentsquare (Web Analytics), Atlassian Suite (Jira, Confluence), GCP, AWS
+- Microsoft Office, R (ggplot, dplyr, quarto), Python (NumPy, Pandas, basic Scikit & PyTorch), Basic SQL, PowerBI, Tableau (incl. Prep Builder), Contentsquare (Web Analytics), Atlassian Suite (Jira, Confluence), GCP, AWS, Latex
 
 ---
 

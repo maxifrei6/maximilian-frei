@@ -44,7 +44,7 @@ window.PORTFOLIO_DATA = {
     {
       period: "Oct 2022 — Sep 2023",
       institution: "Technical University of Munich",
-      degree: "B.Sc. in Management & Technology — Switched to Statistics (did not complete)",
+      degree: "B.Sc. in Management & Technology — Switched to Statistics",
       tags: [
         "Management",
         "Finance",
@@ -59,13 +59,11 @@ window.PORTFOLIO_DATA = {
       role: "Working Student · Global Analytics & BI",
       tags: ["Prophet", "XGBoost", "Python", "SQL", "Data Warehouse", "Geospatial"],
       bullets: [
-        "Created a lineage tracker mapping the full flow from data warehouse ingestion and staging to downstream usage on analytics platforms (e.g. Tableau), to monitor dependencies, data privacy, and access.",
-        "Used lineage documentation to support migration planning to Snowflake.",
-        "Built an automated Google PageSpeed tracker to assess performance improvements after the replatforming initiative.",
+        "Created a lineage tracker from warehouse ingestion to downstream analytics (e.g. Tableau) to monitor dependencies and data access; supported Snowflake migration planning.",
         "Built a progressive ensemble for order forecasting using Prophet, XGBoost, and other statistical models, and continuously improved predictive performance.",
         "Performed correlation analysis on weather variables to select relevant features and integrated Weather API data to improve order forecast accuracy.",
-        "Optimized data warehouse pipelines and created tailored data sources for regional analysts.",
         "Built geospatial order mapping, enabling spatial analysis and revealing regional demand patterns to improve forecasting.",
+        "Optimized data warehouse pipelines and created tailored data sources for regional analysts.",
       ],
     },
     {
@@ -76,12 +74,8 @@ window.PORTFOLIO_DATA = {
       bullets: [
         "Automated invoice checks for inbound shipments using Python, saving 5 hours of manual work weekly.",
         "Processed customer service data with Python and developed Tableau dashboards to monitor claims and detect product faults, driving quicker resolutions.",
-        "Conducted market analysis of carrier structures and return behavior to support strategic decision-making.",
-        "Researched EPR and packaging compliance across multiple countries, restructuring internal processes.",
-        "Led packaging audits in Germany and France, overseeing reporting and audit procedures.",
+        "Conducted analysis of carrier structures, return behavior, and EPR/packaging compliance across markets; led packaging audits in Germany and France.",
         "Revamped webshop return communication via extensive Contentsquare analysis, streamlining the process and FAQs with developers.",
-        "Weekly operational KPI reporting and 3PL performance monitoring.",
-        "Provided interim oversight of Customer Service & Inbound Deliveries for 2 months with subsequent new staff onboarding.",
       ],
     },
   ],
@@ -153,10 +147,10 @@ window.PORTFOLIO_DATA = {
   skills: {
     languages: "hero",
     technologies: [
-      "R (ggplot, dplyr, Quarto)",
-      "Python (NumPy, Pandas, Scikit-learn, PyTorch)",
+      "R",
+      "Python",
       "SQL",
-      "Microsoft Office",
+      "LaTeX",
       "Tableau (incl. Prep Builder)",
       "Power BI",
       "Contentsquare",

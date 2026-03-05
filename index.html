@@ -12,12 +12,14 @@
 <body class="min-h-screen bg-background text-foreground">
   <!-- Nav -->
   <header id="nav" class="fixed top-0 left-0 right-0 z-30 transition-all duration-300 bg-transparent">
-    <nav class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-      <a href="#" id="nav-logo" class="font-serif text-lg font-semibold tracking-tight text-foreground">Maximilian Frei</a>
-      <div class="flex items-center gap-6">
+    <nav class="px-6 h-14">
+      <div class="max-w-5xl mx-auto h-full flex items-center justify-between">
+        <a href="#" id="nav-logo" class="font-serif text-lg font-semibold tracking-tight text-foreground">Maximilian Frei</a>
+        <div class="flex items-center gap-6">
         <a href="#experience" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:inline">Experience</a>
         <a href="#work" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:inline">Work</a>
         <a href="#" id="cv-download" class="inline-flex items-center gap-1.5 text-xs font-medium border border-border rounded-md px-3 py-2 hover:bg-muted transition-colors" download>Download CV</a>
+        </div>
       </div>
     </nav>
   </header>
@@ -317,6 +319,23 @@
           });
 
           experienceList.appendChild(block);
+
+          if (isGroup && group.length > 1) {
+            (function (blk) {
+              requestAnimationFrame(function () {
+                var secondRoleBlock = blk.children[3];
+                if (!secondRoleBlock) return;
+                var topDotY = 6;
+                var secondDotY = secondRoleBlock.offsetTop + 6;
+                var lineHeight = Math.max(0, secondDotY - topDotY);
+                var line = document.createElement('div');
+                line.className = 'absolute left-0 w-px bg-border';
+                line.style.top = topDotY + 'px';
+                line.style.height = lineHeight + 'px';
+                blk.insertBefore(line, blk.firstChild);
+              });
+            })(block);
+          }
         });
       }
 
