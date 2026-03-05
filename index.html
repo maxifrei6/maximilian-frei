@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maximilian Frei — Statistics &amp; Data Science</title>
+  <meta name="description" content="Portfolio of Maximilian Frei — LMU Statistics and Data Science student and working student in Global Analytics &amp; BI at BIRKENSTOCK." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="data.js"></script>
+</head>
+<body class="min-h-screen bg-background text-foreground">
+  <!-- Nav -->
+  <header id="nav" class="fixed top-0 left-0 right-0 z-30 transition-all duration-300 bg-transparent">
+    <nav class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="#" id="nav-logo" class="font-serif text-lg font-semibold tracking-tight text-foreground">Maximilian Frei</a>
+      <div class="flex items-center gap-6">
+        <a href="#experience" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:inline">Experience</a>
+        <a href="#work" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:inline">Work</a>
+        <a href="#papers" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:inline">Papers</a>
+        <a href="#" id="cv-download" class="inline-flex items-center gap-1.5 text-xs font-medium border border-border rounded-md px-3 py-2 hover:bg-muted transition-colors" download>Download CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="pt-28 sm:pt-32 pb-16 sm:pb-20 px-6">
+      <div class="max-w-5xl mx-auto flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between gap-10">
+        <div class="flex-1 min-w-0">
+          <p id="hero-kicker" class="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-4">Statistics &amp; Data Science</p>
+          <h1 id="hero-name" class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-foreground">
+            Maximilian<br />Frei
+          </h1>
+          <p id="hero-tagline" class="mt-5 text-lg sm:text-xl text-muted-foreground max-w-lg leading-relaxed font-light">
+            LMU Statistics and Data Science · Working Student Global Analytics &amp; BI at BIRKENSTOCK.
+          </p>
+          <div class="flex items-center gap-4 mt-6">
+            <a id="hero-github" href="https://github.com/maxifrei6" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">GitHub</a>
+            <a id="hero-linkedin" href="https://www.linkedin.com/in/maximilian-frei-30915424b/" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">LinkedIn</a>
+            <a id="hero-email" href="mailto:maxifrei@protonmail.com" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">Email</a>
+          </div>
+          <div class="mt-6 h-px w-16 bg-primary"></div>
+        </div>
+        <div id="hero-photo-wrap" class="shrink-0 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full border border-border overflow-hidden bg-muted flex items-center justify-center">
+          <img id="hero-photo" src="assets/profile-image.jpg" alt="Maximilian Frei" class="w-full h-full object-cover" />
+          <span id="hero-photo-fallback" class="text-xs text-muted-foreground hidden">Photo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">Academic Background</p>
+        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-10">Education</h2>
+        <div class="relative ml-4">
+          <div class="absolute left-0 top-2 bottom-2 w-px bg-border"></div>
+          <div id="education-list" class="space-y-10"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">Career</p>
+        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-10">Experience</h2>
+        <div class="relative ml-4">
+          <div class="absolute left-0 top-2 bottom-2 w-px bg-border"></div>
+          <div id="experience-list" class="space-y-10"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="work" class="py-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">Selected Work</p>
+        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-10">Research &amp; Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- Papers -->
+    <section id="papers" class="py-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">Publications</p>
+        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-10">Papers &amp; Writing</h2>
+        <div id="papers-list" class="divide-y divide-[var(--border)]"></div>
+      </div>
+    </section>
+
+    <footer class="border-t border-border py-8 px-6">
+      <div class="max-w-5xl mx-auto text-xs text-muted-foreground">
+        © <span id="year"></span> Maximilian Frei. All rights reserved.
+      </div>
+    </footer>
+  </main>
+
+  <!-- Drawer (Read More) -->
+  <div id="drawer-wrap" aria-hidden="true">
+    <div class="drawer-overlay" id="drawer-overlay" aria-label="Close"></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <div class="sticky top-0 z-10 bg-background border-b border-border px-6 py-4 flex items-center justify-between">
+        <h2 id="drawer-title" class="font-serif text-lg font-semibold text-foreground pr-4"></h2>
+        <a href="#" id="drawer-pdf" class="hidden shrink-0 text-xs font-medium border border-border rounded px-3 py-2 hover:bg-muted">Download PDF</a>
+        <button type="button" class="shrink-0 p-2 rounded hover:bg-muted text-foreground" id="drawer-close" aria-label="Close">✕</button>
+      </div>
+      <div id="drawer-content" class="px-6 py-8 space-y-8"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var data = window.PORTFOLIO_DATA || {};
+      var hero = data.hero || {};
+      var links = data.links || {};
+      var education = data.education || [];
+      var experience = data.experience || [];
+      var papers = data.papers || [];
+      var projects = (data.projects && data.projects.length) ? data.projects : [];
+
+      // Hero content
+      var heroKicker = document.getElementById('hero-kicker');
+      var heroName = document.getElementById('hero-name');
+      var heroTagline = document.getElementById('hero-tagline');
+      var navLogo = document.getElementById('nav-logo');
+
+      if (heroKicker && hero.kicker) heroKicker.textContent = hero.kicker;
+      if (heroName && hero.nameLines && hero.nameLines.length) {
+        heroName.innerHTML = hero.nameLines.join('<br />');
+      }
+      if (heroTagline && hero.tagline) heroTagline.textContent = hero.tagline;
+      if (navLogo && hero.nameLines && hero.nameLines.length) {
+        navLogo.textContent = hero.nameLines.join(' ');
+      }
+
+      var githubLink = document.getElementById('hero-github');
+      var linkedinLink = document.getElementById('hero-linkedin');
+      var emailLink = document.getElementById('hero-email');
+
+      if (githubLink && links.github) githubLink.href = links.github;
+      if (linkedinLink && links.linkedin) linkedinLink.href = links.linkedin;
+      if (emailLink && links.email) emailLink.href = 'mailto:' + links.email;
+
+      var cvLink = document.getElementById('cv-download');
+      if (cvLink && links.cvPdf) cvLink.href = links.cvPdf;
+
+      var heroPhoto = document.getElementById('hero-photo');
+      var heroPhotoFallback = document.getElementById('hero-photo-fallback');
+      if (heroPhoto && hero.profileImage) {
+        heroPhoto.src = hero.profileImage;
+        heroPhoto.onerror = function () {
+          heroPhoto.classList.add('hidden');
+          if (heroPhotoFallback) heroPhotoFallback.classList.remove('hidden');
+        };
+      }
+
+      // Education
+      var educationList = document.getElementById('education-list');
+      if (educationList && education.length) {
+        education.forEach(function (edu) {
+          var wrapper = document.createElement('div');
+          wrapper.className = 'relative pl-8';
+
+          var dot = document.createElement('div');
+          dot.className = 'absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
+          wrapper.appendChild(dot);
+
+          var period = document.createElement('p');
+          period.className = 'text-xs text-muted-foreground mb-1';
+          period.textContent = edu.period;
+          wrapper.appendChild(period);
+
+          var title = document.createElement('h3');
+          title.className = 'font-serif text-lg font-semibold text-foreground';
+          title.textContent = edu.institution;
+          wrapper.appendChild(title);
+
+          var degree = document.createElement('p');
+          degree.className = 'text-sm text-muted-foreground mt-0.5';
+          degree.textContent = edu.degree;
+          wrapper.appendChild(degree);
+
+          if (edu.tags && edu.tags.length) {
+            var tagsWrap = document.createElement('div');
+            tagsWrap.className = 'flex flex-wrap gap-1.5 mt-3';
+            edu.tags.forEach(function (tag) {
+              var chip = document.createElement('span');
+              chip.className = 'text-[10px] font-normal text-muted-foreground border border-border rounded px-2 py-0.5';
+              chip.textContent = tag;
+              tagsWrap.appendChild(chip);
+            });
+            wrapper.appendChild(tagsWrap);
+          }
+
+          educationList.appendChild(wrapper);
+        });
+      }
+
+      // Experience
+      var experienceList = document.getElementById('experience-list');
+      if (experienceList && experience.length) {
+        experience.forEach(function (job) {
+          var wrapper = document.createElement('div');
+          wrapper.className = 'relative pl-8';
+
+          var dot = document.createElement('div');
+          dot.className = 'absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
+          wrapper.appendChild(dot);
+
+          var period = document.createElement('p');
+          period.className = 'text-xs text-muted-foreground mb-1';
+          period.textContent = job.period;
+          wrapper.appendChild(period);
+
+          var title = document.createElement('h3');
+          title.className = 'font-serif text-lg font-semibold text-foreground';
+          title.textContent = job.company;
+          wrapper.appendChild(title);
+
+          var role = document.createElement('p');
+          role.className = 'text-sm text-muted-foreground mt-0.5';
+          role.textContent = job.role;
+          wrapper.appendChild(role);
+
+          if (job.tags && job.tags.length) {
+            var tagsWrap = document.createElement('div');
+            tagsWrap.className = 'flex flex-wrap gap-1.5 mt-3';
+            job.tags.forEach(function (tag) {
+              var chip = document.createElement('span');
+              chip.className = 'text-[10px] font-normal text-muted-foreground border border-border rounded px-2 py-0.5';
+              chip.textContent = tag;
+              tagsWrap.appendChild(chip);
+            });
+            wrapper.appendChild(tagsWrap);
+          }
+
+          if (job.bullets && job.bullets.length) {
+            var ul = document.createElement('ul');
+            ul.className = 'mt-3 list-disc text-sm text-muted-foreground ml-4 space-y-1';
+            job.bullets.forEach(function (b) {
+              var li = document.createElement('li');
+              li.textContent = b;
+              ul.appendChild(li);
+            });
+            wrapper.appendChild(ul);
+          }
+
+          experienceList.appendChild(wrapper);
+        });
+      }
+
+      // Projects (cards and drawer are already dynamic)
+
+      var grid = document.getElementById('projects-grid');
+      var wrap = document.getElementById('drawer-wrap');
+      var overlay = document.getElementById('drawer-overlay');
+      var closeBtn = document.getElementById('drawer-close');
+      var titleEl = document.getElementById('drawer-title');
+      var contentEl = document.getElementById('drawer-content');
+      var pdfLink = document.getElementById('drawer-pdf');
+
+      function openDrawer(project) {
+        titleEl.textContent = project.title;
+        pdfLink.href = 'assets/pdf/project' + project.id + '.pdf';
+        pdfLink.classList.remove('hidden');
+        contentEl.innerHTML = '<section><h4 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Abstract</h4><p class="text-sm leading-relaxed text-foreground">' + project.abstract + '</p></section><div class="h-px bg-border"></div><section><h4 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Methodology</h4><p class="text-sm leading-relaxed text-foreground">' + project.methodology + '</p><div class="mt-4 border border-border rounded p-4 bg-muted font-mono text-xs text-center text-muted-foreground">ŷ = Xβ + ε,  ε ~ 𝒩(0, σ²I)</div></section><div class="h-px bg-border"></div><section><h4 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Results</h4><p class="text-sm leading-relaxed text-foreground">' + project.results + '</p><div class="mt-4 border border-border rounded aspect-video bg-muted flex items-center justify-center"><svg viewBox="0 0 400 200" class="w-full h-full p-4 text-primary" style="opacity:0.4"><polyline fill="none" stroke="currentColor" stroke-width="2" points="0,180 40,160 80,140 120,90 160,100 200,60 240,70 280,30 320,50 360,20 400,10"/><line x1="0" y1="190" x2="400" y2="190" stroke="currentColor" stroke-width="1" opacity="0.3"/><line x1="0" y1="0" x2="0" y2="190" stroke="currentColor" stroke-width="1" opacity="0.3"/></svg></div></section>';
+        wrap.classList.add('drawer-open');
+        wrap.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeDrawer() {
+        wrap.classList.remove('drawer-open');
+        wrap.setAttribute('aria-hidden', 'true');
+      }
+
+      overlay.addEventListener('click', closeDrawer);
+      closeBtn.addEventListener('click', closeDrawer);
+
+      projects.forEach(function (p) {
+        var card = document.createElement('article');
+        card.className = 'project-card border border-border rounded-lg p-6 flex flex-col justify-between transition-colors';
+        card.innerHTML = '<div><span class="text-[10px] tracking-widest uppercase font-medium text-muted-foreground border border-border rounded px-2 py-0.5">' + p.category + '</span><h3 class="font-serif text-xl font-semibold leading-snug text-foreground mt-4 mb-2">' + p.title + '</h3><p class="text-sm text-muted-foreground leading-relaxed">' + p.teaser + '</p></div><div class="flex gap-2 mt-6 pt-4 border-t border-border"><a href="' + p.repoUrl + '" target="_blank" rel="noopener" class="text-xs text-muted-foreground hover:text-foreground">View Repo</a><button type="button" class="text-xs text-primary hover:underline js-drawer-open" data-id="' + p.id + '">Read Analysis →</button></div>';
+        grid.appendChild(card);
+      });
+
+      grid.addEventListener('click', function (e) {
+        var btn = e.target.closest('.js-drawer-open');
+        if (!btn) return;
+        var id = btn.getAttribute('data-id');
+        var project = projects.filter(function (p) { return p.id === id; })[0];
+        if (project) openDrawer(project);
+      });
+
+      // Papers & writing
+      var papersList = document.getElementById('papers-list');
+      if (papersList && papers.length) {
+        papers.forEach(function (paper) {
+          var row = document.createElement('div');
+          row.className = 'py-5 flex flex-col sm:flex-row sm:items-start gap-4';
+
+          var main = document.createElement('div');
+          main.className = 'flex-1 min-w-0';
+
+          var title = document.createElement('h3');
+          title.className = 'font-serif text-base font-semibold text-foreground leading-snug';
+          title.textContent = paper.title;
+          main.appendChild(title);
+
+          if (paper.authors) {
+            var authors = document.createElement('p');
+            authors.className = 'text-sm text-muted-foreground mt-1';
+            authors.textContent = paper.authors;
+            main.appendChild(authors);
+          }
+
+          if (paper.venue || paper.year) {
+            var meta = document.createElement('p');
+            meta.className = 'text-xs text-muted-foreground mt-0.5';
+            if (paper.venue && paper.year) {
+              meta.innerHTML = '<span class="italic">' + paper.venue + '</span>, ' + paper.year;
+            } else {
+              meta.textContent = paper.venue || paper.year;
+            }
+            main.appendChild(meta);
+          }
+
+          row.appendChild(main);
+
+          if (paper.pdf) {
+            var actions = document.createElement('div');
+            actions.className = 'flex gap-2 shrink-0';
+
+            var cite = document.createElement('span');
+            cite.className = 'text-xs text-muted-foreground cursor-default';
+            cite.textContent = 'Cite';
+            actions.appendChild(cite);
+
+            var link = document.createElement('a');
+            link.href = paper.pdf;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.className = 'text-xs text-primary hover:underline';
+            link.textContent = 'PDF';
+            actions.appendChild(link);
+
+            row.appendChild(actions);
+          }
+
+          papersList.appendChild(row);
+        });
+      } else if (papersList) {
+        var placeholder = document.createElement('p');
+        placeholder.className = 'text-sm text-muted-foreground py-4';
+        placeholder.textContent = 'Selected papers and longer-form writing will appear here over time.';
+        papersList.appendChild(placeholder);
+      }
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      var nav = document.getElementById('nav');
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('bg-background', window.scrollY > 20);
+        nav.classList.toggle('border-b', window.scrollY > 20);
+        nav.classList.toggle('border-border', window.scrollY > 20);
+      });
+    })();
+  </script>
+</body>
+</html>
