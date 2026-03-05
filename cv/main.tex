@@ -19,8 +19,8 @@
 \usepackage{fontawesome5} % for using icons
 \usepackage{amsmath} % for math
 \usepackage[
-    pdftitle={John Doe's CV},
-    pdfauthor={John Doe},
+    pdftitle={Maximilian Frei's CV},
+    pdfauthor={Maximilian Frei},
     pdfcreator={LaTeX with RenderCV},
     colorlinks=true,
     urlcolor=primaryColor
@@ -71,12 +71,13 @@
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
 \newenvironment{highlights}{
+    \setlength{\leftmargini}{2em}
     \begin{itemize}[
         topsep=0.10 cm,
         parsep=0.10 cm,
         partopsep=0pt,
         itemsep=0pt,
-        leftmargin=0 cm + 10pt
+        leftmargin=2em
     ]
 }{
     \end{itemize}
@@ -140,7 +141,7 @@
         \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
         \LenToUnit{\paperheight-1.0 cm}
     ){\vtop{{\null}\makebox[0pt][c]{
-        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+        \small\color{gray}\textit{Last updated March 2026}
     }}}%
   }%
 }%
@@ -160,24 +161,24 @@
     \sbox\ANDbox{$|$}
 
     \begin{header}
-        \fontsize{25 pt}{25 pt}\selectfont Maximilian Frei
+        \fontsize{22 pt}{22 pt}\selectfont Maximilian Frei
 
         \vspace{5 pt}
 
-        \normalsize
-        \mbox{Rumfordstraße 2, 80469 München}%
-        \kern 5.0 pt%
+        \small
+        \mbox{Carrer de Mallorca 196, 08036 Barcelona}%
+        \kern 4 pt%
         \AND%
-        \kern 5.0 pt%
+        \kern 4 pt%
         \mbox{\hrefWithoutArrow{mailto:maxifrei@protonmail.com}{maxifrei@protonmail.com}}%
-        \kern 5.0 pt%
+        \kern 4 pt%
         \AND%
-        \kern 5.0 pt%
+        \kern 4 pt%
         \mbox{\hrefWithoutArrow{tel:+49 179 4579 169}{+49 179 4579 169}}%
-        \kern 5.0 pt%
+        \kern 4 pt%
         \AND%
-        \kern 5.0 pt%
-        \mbox{\hrefWithoutArrow{https://github.com/maxifrei6}{github.com/maxifrei6}}%
+        \kern 4 pt%
+        \mbox{\hrefWithoutArrow{https://maxifrei6.github.io/maximilian-frei}{Portfolio}}%
     \end{header}
 
     \vspace{5 pt - 0.3 cm}
@@ -185,33 +186,43 @@
 
    \section{Education}
 
-
-
-        
         \begin{twocolentry}{
-            Oct 23 – Today
+            Feb 26 – Jun 26
         }
-            \textbf{LMU Munich}, BS in Statistics \& Data Science, Minor: Computer Science\end{twocolentry}
+            \textbf{Universitat de Barcelona}, Semester abroad\end{twocolentry}
 
         \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item \textbf{Projects:} World Bank Data Analysis in R
-                \item \textbf{Relevant Coursework:} Calculus I \& II, Linear Algebra, Probability Theory, Statistical Inference, Programming in R and Python; current coursework includes Machine Learning (Supervised Learning) and Linear Modeling
+                \item Multivariate Statistics, Econometrics, Forecasting Methods, Spanish B2
             \end{highlights}
         \end{onecolentry}
 
         \vspace{0.2 cm}
 
-          \begin{twocolentry}{
-            Oct 22 – Sep 23
+        \begin{twocolentry}{
+            Oct 23 – Mar 27
         }
-            \textbf{Technical University Munich}, BS in Management \& Technology\end{twocolentry}
+            \textbf{LMU Munich}, B.Sc. in Statistics \& Data Science, Minor: Computer Science\end{twocolentry}
 
         \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Took foundational courses in management, finance, and economics, developing passion for data science through statistics module and working student role
+                \item Calculus I \& II, Linear Algebra, Probability Theory, Statistical Inference, Machine Learning, Linear Modeling, Programming in R and Python
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            Oct 22 – Sep 23
+        }
+            \textbf{Technical University of Munich}, B.Sc. in Management \& Technology\end{twocolentry}
+
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Foundational courses in management, finance, and economics, pivoted to statistics
             \end{highlights}
         \end{onecolentry}
 
@@ -226,10 +237,10 @@
 
     
     \section{Experience}
-        \textbf{BIRKENSTOCK - \textit{Working Student}}
+        \textbf{Birkenstock — \textit{Working Student}}
         \vspace{0.10 cm}
         \begin{twocolentry}{
-            Apr 25 – Today
+            Apr 25 – Feb 26
         }
             \hspace{0.3cm}\textbf{Global Analytics \& BI}\end{twocolentry}
 
@@ -237,9 +248,9 @@
         \begin{onecolentry}
             \setlength{\leftmargini}{2em}
             \begin{itemize}
-                \item Building a progressive ensemble for order forecasting using Prophet, XGBoost, and other statistical models, continuously improving predictive performance.
-                \item Performed correlation analysis on weather variables to select relevant features for integrating Weather API data and improving order forecast accuracy
-                \item Optimizing data warehouse pipelines and creating tailored data sources for regional analysts 
+                \item Created a lineage tracker from data warehouse ingestion to downstream analytics (e.g.\ Tableau) to monitor dependencies and data access; supported Snowflake migration.
+                \item Built a progressive ensemble for order forecasting using Prophet, XGBoost, and other statistical models, and continuously improved predictive performance.
+                \item Improved order forecast accuracy by integrating Weather API data (via correlation-based feature selection) and building geospatial order mapping for regional demand patterns.
             \end{itemize}
         \end{onecolentry}
 
@@ -247,46 +258,43 @@
         \begin{twocolentry}{
             Mar 23 – Mar 25
         }
-            \hspace{0.3cm}\textbf{DtC Operations Europe}\end{twocolentry}
+            \hspace{0.3cm}\textbf{Digital Operations Europe}\end{twocolentry}
 
         \vspace{0.05 cm}
         \begin{onecolentry}
             \setlength{\leftmargini}{2em}
             \begin{itemize}
-                \item Automated invoice checks for inbound shipments using Python, saving 5 hours of manual work weekly
-                \item Processed customer service data with Python and developed Tableau dashboards to monitor claims and detect product faults, driving quicker resolutions
-                \item Conducted market analysis of carrier structures and return behavior to support strategic decision-making
-            \end{itemize}
+                \item Automated invoice checks for inbound shipments using Python, saving 5 hours of manual work weekly.
+                \item Processed customer service data with Python and developed Tableau dashboards to monitor claims and detect product faults, driving quicker resolutions.
+                \end{itemize}
         \end{onecolentry}
 
     
     \section{Projects}
 
         \begin{twocolentry}{
-           \href{https://github.com/maxifrei6/wardrobe_detection_yolo}{[Github]}
+            \href{https://github.com/maxifrei6/microbial-network-communities}{[Github]}
         }
-            \textbf{YOLO Wardrobe Item Detection}\end{twocolentry}
+            \textbf{Microbial Network Communities}\end{twocolentry}
 
         \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Learning PyTorch by fine-tuning YOLO models for wardrobe item detection to deploy on Raspberry Pi
-                \item Tools used: PyTorch, OpenCV, Raspberry Pi
+                \item Compared Atlantic and Pacific marine microbial co-occurrence networks using community detection and consensus clustering; interpreted modules with taxonomy and environmental variables for a seminar thesis.
             \end{highlights}
         \end{onecolentry}
-        
+
         \vspace{0.2 cm}
-        
+
         \begin{twocolentry}{
-            \href{https://github.com/maxifrei6/worldbank_analysis}{[Github]}
+            \href{https://github.com/maxifrei6/stroke-circadian}{[Github]}
         }
-            \textbf{World Bank Data Analysis}\end{twocolentry}
+            \textbf{Stroke Circadian Metabolomics}\end{twocolentry}
 
         \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Explored education-related research questions with a World Bank dataset, leveraging linear models to uncover correlations and relationships. Designed visualizations to communicate key findings
-                \item Tools used: R, Github
+                \item Analyzed circadian patterns in stroke patient metabolomics (LMU Hospital) using pathway scores, multiple imputation, and Lasso regression.
             \end{highlights}
         \end{onecolentry}
 
@@ -305,7 +313,7 @@
         \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Implemented a later school start, managing the application, project execution, and evaluation, which reduced average waiting times in public transportation for students
+                \item Led a later school start initiative that reduced students' public-transport waiting times.
                 \item Organized yearbook, diploma awarding ceremony and clothing donation campaign for Ukraine
             \end{highlights}
         \end{onecolentry}
@@ -321,13 +329,13 @@
 
         
         \begin{onecolentry}
-            \textbf{Languages:} German (native language), English (B2+), Spanish (B1), French (B1)
+            \textbf{Languages:} German (native), English (native-level), Spanish (B1/B2), French (B1)
         \end{onecolentry}
 
         \vspace{0.2 cm}
 
         \begin{onecolentry}
-            \textbf{Technologies:} Microsoft Office, R (ggplot, dplyr, quarto), Python (NumPy, Pandas, basic Scikit \& PyTorch), Basic SQL, PowerBI, Tableau (incl. Prep Builder), Contentsquare (Web Analytics), Atlassian Suite (Jira, Confluence)
+            \textbf{Technologies:} R, Python, SQL, LaTeX, Tableau, Power BI, GCP, AWS, Contentsquare, Jira \& Confluence
         \end{onecolentry}
 
 

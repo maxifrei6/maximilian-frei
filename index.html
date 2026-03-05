@@ -107,9 +107,12 @@
   <div id="drawer-wrap" aria-hidden="true">
     <div class="drawer-overlay" id="drawer-overlay" aria-label="Close"></div>
     <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
-      <div class="sticky top-0 z-10 bg-background border-b border-border px-6 py-4 flex items-center justify-between">
-        <h2 id="drawer-title" class="font-serif text-lg font-semibold text-foreground pr-4"></h2>
-        <a href="#" id="drawer-pdf" class="hidden shrink-0 text-xs font-medium border border-border rounded px-3 py-2 hover:bg-muted">Download PDF</a>
+      <div class="sticky top-0 z-10 bg-background border-b border-border px-6 py-4 flex items-center justify-between gap-3">
+        <h2 id="drawer-title" class="font-serif text-lg font-semibold text-foreground pr-4 truncate min-w-0"></h2>
+        <div class="flex items-center gap-2 shrink-0">
+          <a href="#" id="drawer-github" class="hidden text-xs font-medium border border-border rounded px-3 py-2 hover:bg-muted" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="#" id="drawer-pdf" class="hidden text-xs font-medium border border-border rounded px-3 py-2 hover:bg-muted">Download PDF</a>
+        </div>
         <button type="button" class="shrink-0 p-2 rounded hover:bg-muted text-foreground" id="drawer-close" aria-label="Close">✕</button>
       </div>
       <div id="drawer-content" class="px-6 py-8 space-y-8"></div>
@@ -260,27 +263,24 @@
           block.className = 'relative pl-8' + (gi === 0 ? '' : ' mt-8');
 
           if (isGroup) {
-            var topDot = document.createElement('div');
-            topDot.className = 'absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
-            block.appendChild(topDot);
             var companyTitle = document.createElement('h3');
-            companyTitle.className = 'font-serif text-lg font-semibold text-foreground mb-4';
+            companyTitle.className = 'font-serif text-lg font-semibold text-foreground mb-4 -ml-11';
             companyTitle.textContent = group[0].company;
             block.appendChild(companyTitle);
           }
 
           group.forEach(function (job, ji) {
             var roleBlock = document.createElement('div');
-            if (isGroup && ji > 0) roleBlock.className = 'relative mt-6';
+            if (isGroup) roleBlock.className = ji > 0 ? 'relative mt-6' : 'relative';
             if (!isGroup) {
                 var dot = document.createElement('div');
                 dot.className = 'absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
                 roleBlock.appendChild(dot);
             }
-            if (isGroup && ji === 1) {
-              var secondDot = document.createElement('div');
-              secondDot.className = 'absolute -left-8 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
-              roleBlock.appendChild(secondDot);
+            if (isGroup) {
+              var roleDot = document.createElement('div');
+              roleDot.className = 'absolute -left-8 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
+              roleBlock.appendChild(roleDot);
             }
             var headerRow = document.createElement('div');
             headerRow.className = 'flex flex-wrap justify-between items-baseline gap-2';
@@ -335,14 +335,15 @@
           if (isGroup && group.length > 1) {
             (function (blk) {
               requestAnimationFrame(function () {
-                var secondRoleBlock = blk.children[3];
-                if (!secondRoleBlock) return;
-                var topDotY = 6;
+                var firstRoleBlock = blk.children[1];
+                var secondRoleBlock = blk.children[2];
+                if (!firstRoleBlock || !secondRoleBlock) return;
+                var firstDotY = firstRoleBlock.offsetTop + 6;
                 var secondDotY = secondRoleBlock.offsetTop + 6;
-                var lineHeight = Math.max(0, secondDotY - topDotY);
+                var lineHeight = Math.max(0, secondDotY - firstDotY);
                 var line = document.createElement('div');
                 line.className = 'absolute left-0 w-px bg-border';
-                line.style.top = topDotY + 'px';
+                line.style.top = firstDotY + 'px';
                 line.style.height = lineHeight + 'px';
                 blk.insertBefore(line, blk.firstChild);
               });
@@ -360,9 +361,18 @@
       var titleEl = document.getElementById('drawer-title');
       var contentEl = document.getElementById('drawer-content');
       var pdfLink = document.getElementById('drawer-pdf');
+      var githubLink = document.getElementById('drawer-github');
 
       function openDrawer(project) {
         titleEl.textContent = project.title;
+        var repoUrl = project.github || project.repoUrl || '#';
+        if (repoUrl !== '#') {
+          githubLink.href = repoUrl;
+          githubLink.classList.remove('hidden');
+        } else {
+          githubLink.removeAttribute('href');
+          githubLink.classList.add('hidden');
+        }
         if (project.pdf) {
           pdfLink.href = project.pdf;
           pdfLink.classList.remove('hidden');

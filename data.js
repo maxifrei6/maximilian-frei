@@ -6,7 +6,7 @@ window.PORTFOLIO_DATA = {
     languages: [
       { flag: "🇩🇪", label: "German", level: "Native" },
       { flag: "🇬🇧", label: "English", level: "Native-level" },
-      { flag: "🇪🇸", label: "Spanish", level: "B2" },
+      { flag: "🇪🇸", label: "Spanish", level: "B1/B2" },
       { flag: "🇫🇷", label: "French", level: "B1" },
     ],
   },
@@ -25,7 +25,7 @@ window.PORTFOLIO_DATA = {
         "Multivariate Statistics",
         "Econometrics",
         "Forecasting Methods",
-        "Spanish B2",
+        "Spanish B1/B2",
       ],
     },
     {
