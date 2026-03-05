@@ -44,7 +44,7 @@ window.PORTFOLIO_DATA = {
     {
       period: "Oct 2022 — Sep 2023",
       institution: "Technical University of Munich",
-      degree: "B.Sc. in Management & Technology — Switched to Statistics",
+      degree: "B.Sc. in Management & Technology — switched to Statistics",
       tags: [
         "Management",
         "Finance",
@@ -90,11 +90,11 @@ window.PORTFOLIO_DATA = {
       github: "https://github.com/maxifrei6/microbial-network-communities",
       pdf: "assets/pdf/microbial-network-communities.pdf",
       abstract:
-        "Compared Atlantic and Pacific marine microbial co-occurrence networks using community detection (Louvain, Infomap, spectral methods) and consensus clustering.",
+        "This project asks whether microbial co-occurrence networks in the Atlantic and Pacific differ in how they are organized into communities. Using ocean microbiome data (upper 200 m), it compares modular structure across basins and interprets detected communities with taxonomy and environmental variables (temperature, salinity, depth) to attach ecological meaning.",
       methodology:
-        "Interpreted modules with taxonomy and environmental variables (temperature, salinity, depth). Produced network visualizations and algorithm comparisons to support a seminar thesis in R and LaTeX.",
+        "Association networks were built from the same set of taxa in both basins so comparisons are fair. Several community-detection algorithms were run and their partitions compared; consensus clustering was used to obtain a single, stable partition per basin for interpretation.",
       results:
-        "Clear comparison of community structure across oceans and methods, with visualizations and reproducible analysis on GitHub.",
+        "Both networks are similarly sparse (about 25,000 edges each). The Atlantic consistently attains higher modularity than the Pacific across all methods; the consensus partition yields 11 communities in the Atlantic and 10 in the Pacific. Pacific modules are larger on average and more even in size, giving a clear ecological contrast between the two basins.",
     },
     {
       id: "1",
@@ -106,11 +106,11 @@ window.PORTFOLIO_DATA = {
       github: "https://github.com/maxifrei6/stroke-circadian",
       pdf: "assets/pdf/stroke-circadian.pdf",
       abstract:
-        "Analyzed circadian patterns in metabolomic data from stroke patients (LMU Hospital Großhadern) using pathway scores, multiple imputation (missForest, bootstrap), and Lasso regression to link metabolite and pathway levels with time-of-stroke (day vs. night).",
+        "This project examines whether blood metabolite profiles of stroke patients differ by time of stroke (day vs night). Using clinical and metabolomic data from 210 patients (LMU Hospital Großhadern), it aims to find metabolites and pathways that associate with time of day of stroke onset.",
       methodology:
-        "Built an R-based pipeline from raw data merge to figures and a LaTeX thesis. Applied pathway scoring, missForest and bootstrap for missing data, and Lasso regression for inference.",
+        "Metabolites were mapped to biological pathways and lipid classes; missing values were handled with multiple imputation and pathway-level scores were derived. Day vs night (07:00–23:00 vs 23:00–07:00) was tested with appropriate statistical tests and FDR correction; a sensitivity analysis checked whether findings held under different classification choices. Lasso regression was used to select pathways and lipid groups most associated with time of stroke.",
       results:
-        "Identified interpretable links between metabolite/pathway levels and time-of-stroke, with full reproducibility via R Markdown, Quarto, and LaTeX.",
+        "No strong, stable association emerged at the level of individual metabolites. At the aggregated level, certain lipid classes and pathways were significantly associated with time of stroke. The lipid class Glycerophosphoethanolamines (GP02) remained significant after multiple-testing correction and was robust in sensitivity analyses. Lasso highlighted further pathways and lipid groups with positive or negative association to day vs night, giving a clear picture of which biological processes vary with time of stroke.",
     },
     {
       id: "3",
@@ -121,11 +121,11 @@ window.PORTFOLIO_DATA = {
         "Fine-tuning YOLO models for wardrobe item detection to deploy on Raspberry Pi.",
       github: "https://github.com/maxifrei6/wardrobe_detection_yolo",
       abstract:
-        "A personal learning project to explore modern object detection. YOLO models are fine-tuned to recognize different wardrobe items in real-world images.",
+        "This project builds a custom object-detection model to identify wardrobe items (shirts, t-shirts, pants, shoes) from images, with the goal of a model that can run on edge devices.",
       methodology:
-        "Trained and evaluated YOLO models using PyTorch and OpenCV, iteratively refining data augmentation and annotation strategies. Target deployment platform is a Raspberry Pi.",
+        "A manually collected image set was labeled with bounding boxes and split into train and validation sets with balanced classes. A lightweight detection model was fine-tuned on this data with early stopping to avoid overfitting.",
       results:
-        "Achieved reliable detection performance on a small, custom dataset, validating the feasibility of running an embedded wardrobe assistant on low-power hardware.",
+        "The model reached near-perfect precision and recall across all nine item classes (precision 0.98, recall 0.97, mAP 0.98). Slight weakness remained on dark t-shirts and light blue shirts. Inference runs in under 30 ms per image, so the model is suitable for real-time use on constrained hardware.",
     },
     {
       id: "4",
@@ -136,11 +136,11 @@ window.PORTFOLIO_DATA = {
         "Exploring education-related research questions with World Bank data using R and linear models.",
       github: "https://github.com/maxifrei6/worldbank_analysis",
       abstract:
-        "An analytical project using World Bank data to investigate education-related questions and relationships between indicators across countries and over time.",
+        "This project uses World Bank development data (25 countries, 2000–2021) to explore relationships between socioeconomic and environmental indicators. It tackles four topic areas: education and government debt, agriculture and emissions, HIV and education/alcohol, and tobacco use.",
       methodology:
-        "Cleaned and transformed World Bank datasets in R, applied linear models to uncover correlations, and created visualizations to communicate the key patterns.",
+        "Data were cleaned, merged, and grouped by income, population density, and other dimensions for subgroup analysis. Each topic used robust regression and correlation methods plus visualizations to test the relationships of interest.",
       results:
-        "Identified interpretable relationships between education indicators and other socio-economic variables, summarized in reproducible analysis notebooks.",
+        "Education: central government debt and labor force with basic education are positively correlated overall, with opposite patterns in medium- vs high-income countries and stronger effects when segmenting by population size; pupil–teacher ratio links to education outcomes more clearly in high-density countries. Results are summarized in figures and a presentation across all four topics.",
     },
   ],
   papers: [],

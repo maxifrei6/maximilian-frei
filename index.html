@@ -27,7 +27,7 @@
   <main>
     <!-- Hero -->
     <section class="pt-28 sm:pt-32 pb-10 sm:pb-12 px-6">
-      <div class="max-w-5xl mx-auto flex flex-col-reverse sm:flex-row sm:items-start sm:justify-between gap-10">
+      <div class="max-w-5xl mx-auto flex flex-row items-start justify-between gap-4 sm:gap-10">
         <div class="flex-1 min-w-0">
           <h1 id="hero-name" class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-foreground">
             Maximilian<br />Frei
@@ -206,15 +206,17 @@
           dot.className = 'absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
           wrapper.appendChild(dot);
 
-          var period = document.createElement('p');
-          period.className = 'text-xs text-muted-foreground mb-1';
-          period.textContent = edu.period;
-          wrapper.appendChild(period);
-
+          var headerRow = document.createElement('div');
+          headerRow.className = 'flex flex-wrap justify-between items-baseline gap-2';
           var title = document.createElement('h3');
           title.className = 'font-serif text-lg font-semibold text-foreground';
           title.textContent = edu.institution;
-          wrapper.appendChild(title);
+          headerRow.appendChild(title);
+          var period = document.createElement('p');
+          period.className = 'text-xs text-muted-foreground shrink-0';
+          period.textContent = edu.period;
+          headerRow.appendChild(period);
+          wrapper.appendChild(headerRow);
 
           var degree = document.createElement('p');
           degree.className = 'text-sm text-muted-foreground mt-0.5';
@@ -280,20 +282,30 @@
               secondDot.className = 'absolute -left-8 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
               roleBlock.appendChild(secondDot);
             }
-            var period = document.createElement('p');
-            period.className = 'text-xs text-muted-foreground mb-1';
-            period.textContent = job.period;
-            roleBlock.appendChild(period);
+            var headerRow = document.createElement('div');
+            headerRow.className = 'flex flex-wrap justify-between items-baseline gap-2';
             if (!isGroup) {
               var title = document.createElement('h3');
               title.className = 'font-serif text-lg font-semibold text-foreground';
               title.textContent = job.company;
-              roleBlock.appendChild(title);
+              headerRow.appendChild(title);
+            } else {
+              var role = document.createElement('p');
+              role.className = 'text-sm font-semibold text-neutral-600';
+              role.textContent = job.role;
+              headerRow.appendChild(role);
             }
-            var role = document.createElement('p');
-            role.className = 'text-sm font-semibold text-neutral-600 mt-0.5';
-            role.textContent = job.role;
-            roleBlock.appendChild(role);
+            var period = document.createElement('p');
+            period.className = 'text-xs text-muted-foreground shrink-0';
+            period.textContent = job.period;
+            headerRow.appendChild(period);
+            roleBlock.appendChild(headerRow);
+            if (!isGroup) {
+              var role = document.createElement('p');
+              role.className = 'text-sm font-semibold text-neutral-600 mt-0.5';
+              role.textContent = job.role;
+              roleBlock.appendChild(role);
+            }
             if (job.tags && job.tags.length) {
               var tagsWrap = document.createElement('div');
               tagsWrap.className = 'flex flex-wrap gap-1.5 mt-3';
