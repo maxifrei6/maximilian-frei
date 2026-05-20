@@ -100,6 +100,8 @@ window.PORTFOLIO_DATA = {
       category: "Network Analysis",
       title: "Microbial Network Communities",
       image: "assets/projects/network.png",
+      methodologyImage: "assets/projects/network-methodology.png",
+      resultsImage: "assets/projects/network-results.png",
       teaser:
         "Compared Atlantic and Pacific marine microbial co-occurrence networks using community detection and consensus clustering; interpreted modules with taxonomy and environmental variables for a seminar thesis.",
       github: "https://github.com/maxifrei6/microbial-network-communities",
@@ -116,6 +118,8 @@ window.PORTFOLIO_DATA = {
       category: "Biostatistics",
       title: "Stroke Circadian Metabolomics",
       image: "assets/projects/stroke.png",
+      methodologyImage: "assets/projects/stroke-methodology.png",
+      resultsImage: "assets/projects/stroke-results.png",
       teaser:
         "Analyzed circadian patterns in stroke patient metabolomics (LMU Hospital) using pathway scores, multiple imputation, and Lasso regression.",
       github: "https://github.com/maxifrei6/stroke-circadian",
@@ -132,6 +136,8 @@ window.PORTFOLIO_DATA = {
       category: "Computer Vision",
       title: "YOLO Wardrobe Item Detection",
       image: "assets/projects/yolo.png",
+      methodologyImage: "assets/projects/yolo-methodology.png",
+      resultsImage: "assets/projects/yolo-results.png",
       teaser:
         "Fine-tuning YOLO models for wardrobe item detection to deploy on Raspberry Pi.",
       github: "https://github.com/maxifrei6/wardrobe_detection_yolo",
@@ -147,6 +153,8 @@ window.PORTFOLIO_DATA = {
       category: "Data Analysis",
       title: "World Bank Data Analysis",
       image: "assets/projects/worldbank.png",
+      methodologyImage: "assets/projects/worldbank-methodology.png",
+      resultsImage: "assets/projects/worldbank-results.png",
       teaser:
         "Exploring education-related research questions with World Bank data using R and linear models.",
       github: "https://github.com/maxifrei6/worldbank_analysis",

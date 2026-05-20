@@ -424,6 +424,16 @@
       var pdfLink = document.getElementById('drawer-pdf');
       var githubLink = document.getElementById('drawer-github');
 
+      function projectFigure(src, alt) {
+        if (!src) return '';
+        var safeAlt = (alt || '').replace(/"/g, '&quot;');
+        return (
+          '<figure class="mt-4 overflow-hidden rounded-lg border border-border bg-muted">' +
+          '<img src="' + src + '" alt="' + safeAlt + '" class="w-full h-auto" loading="lazy">' +
+          '</figure>'
+        );
+      }
+
       function openDrawer(project) {
         titleEl.textContent = project.title;
         var repoUrl = project.github || project.repoUrl || '#';
@@ -441,7 +451,17 @@
           pdfLink.removeAttribute('href');
           pdfLink.classList.add('hidden');
         }
-        contentEl.innerHTML = '<section><h4 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Abstract</h4><p class="text-sm leading-relaxed text-foreground">' + project.abstract + '</p></section><div class="h-px bg-border"></div><section><h4 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Methodology</h4><p class="text-sm leading-relaxed text-foreground">' + project.methodology + '</p><div class="mt-4 border border-border rounded p-4 bg-muted font-mono text-xs text-center text-muted-foreground">ŷ = Xβ + ε,  ε ~ 𝒩(0, σ²I)</div></section><div class="h-px bg-border"></div><section><h4 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Results</h4><p class="text-sm leading-relaxed text-foreground">' + project.results + '</p><div class="mt-4 border border-border rounded aspect-video bg-muted flex items-center justify-center"><svg viewBox="0 0 400 200" class="w-full h-full p-4 text-primary" style="opacity:0.4"><polyline fill="none" stroke="currentColor" stroke-width="2" points="0,180 40,160 80,140 120,90 160,100 200,60 240,70 280,30 320,50 360,20 400,10"/><line x1="0" y1="190" x2="400" y2="190" stroke="currentColor" stroke-width="1" opacity="0.3"/><line x1="0" y1="0" x2="0" y2="190" stroke="currentColor" stroke-width="1" opacity="0.3"/></svg></div></section>';
+        contentEl.innerHTML =
+          '<section><h4 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Abstract</h4>' +
+          '<p class="text-sm leading-relaxed text-foreground">' + project.abstract + '</p></section>' +
+          '<div class="h-px bg-border"></div>' +
+          '<section><h4 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Methodology</h4>' +
+          '<p class="text-sm leading-relaxed text-foreground">' + project.methodology + '</p>' +
+          projectFigure(project.methodologyImage, project.title + ' — methodology') + '</section>' +
+          '<div class="h-px bg-border"></div>' +
+          '<section><h4 class="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Results</h4>' +
+          '<p class="text-sm leading-relaxed text-foreground">' + project.results + '</p>' +
+          projectFigure(project.resultsImage, project.title + ' — results') + '</section>';
         wrap.classList.add('drawer-open');
         wrap.setAttribute('aria-hidden', 'false');
       }
