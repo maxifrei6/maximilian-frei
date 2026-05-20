@@ -164,7 +164,9 @@
         emailLink.textContent = links.email;
       }
       var heroLanguages = document.getElementById('hero-languages');
-      var heroFlags = (hero.languages && hero.languages.map(function (l) { return l.flag; })) || [];
+      var heroFlags = (hero.languages && hero.languages.filter(function (l) {
+        return l.label !== 'French';
+      }).map(function (l) { return l.flag; })) || [];
       if (heroLanguages && heroFlags && heroFlags.length) {
         heroFlags.forEach(function (flag) {
           var span = document.createElement('span');
