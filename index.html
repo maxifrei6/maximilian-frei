@@ -79,6 +79,17 @@
       </div>
     </section>
 
+    <!-- Initiatives -->
+    <section id="initiatives" class="py-10 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground mb-8">Initiatives</h2>
+        <div class="relative ml-4">
+          <div class="absolute left-0 top-2 bottom-2 w-px bg-border"></div>
+          <div id="initiatives-list" class="space-y-8"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Skills -->
     <section id="skills" class="py-10 px-6">
       <div class="max-w-5xl mx-auto">
@@ -126,6 +137,7 @@
       var links = data.links || {};
       var education = data.education || [];
       var experience = data.experience || [];
+      var initiatives = data.initiatives || [];
       var projects = (data.projects && data.projects.length) ? data.projects : [];
 
       // Hero content
@@ -152,7 +164,7 @@
         emailLink.textContent = links.email;
       }
       var heroLanguages = document.getElementById('hero-languages');
-      var heroFlags = (hero.languages && hero.languages.slice(0, 3).map(function (l) { return l.flag; })) || [];
+      var heroFlags = (hero.languages && hero.languages.map(function (l) { return l.flag; })) || [];
       if (heroLanguages && heroFlags && heroFlags.length) {
         heroFlags.forEach(function (flag) {
           var span = document.createElement('span');
@@ -263,10 +275,17 @@
           block.className = 'relative pl-8' + (gi === 0 ? '' : ' mt-8');
 
           if (isGroup) {
+            var companyHeader = document.createElement('div');
+            companyHeader.className = 'flex flex-wrap justify-between items-baseline gap-2 mb-4 -ml-11';
             var companyTitle = document.createElement('h3');
-            companyTitle.className = 'font-serif text-lg font-semibold text-foreground mb-4 -ml-11';
+            companyTitle.className = 'font-serif text-lg font-semibold text-foreground';
             companyTitle.textContent = group[0].company;
-            block.appendChild(companyTitle);
+            companyHeader.appendChild(companyTitle);
+            var companyPeriod = document.createElement('p');
+            companyPeriod.className = 'text-xs text-muted-foreground shrink-0';
+            companyPeriod.textContent = group[0].period;
+            companyHeader.appendChild(companyPeriod);
+            block.appendChild(companyHeader);
           }
 
           group.forEach(function (job, ji) {
@@ -295,10 +314,12 @@
               role.textContent = job.role;
               headerRow.appendChild(role);
             }
-            var period = document.createElement('p');
-            period.className = 'text-xs text-muted-foreground shrink-0';
-            period.textContent = job.period;
-            headerRow.appendChild(period);
+            if (!isGroup) {
+              var period = document.createElement('p');
+              period.className = 'text-xs text-muted-foreground shrink-0';
+              period.textContent = job.period;
+              headerRow.appendChild(period);
+            }
             roleBlock.appendChild(headerRow);
             if (!isGroup) {
               var role = document.createElement('p');
@@ -349,6 +370,44 @@
               });
             })(block);
           }
+        });
+      }
+
+      // Initiatives
+      var initiativesList = document.getElementById('initiatives-list');
+      if (initiativesList && initiatives.length) {
+        initiatives.forEach(function (item) {
+          var wrapper = document.createElement('div');
+          wrapper.className = 'relative pl-8';
+
+          var dot = document.createElement('div');
+          dot.className = 'absolute left-0 top-1.5 w-2 h-2 rounded-full bg-primary -translate-x-[3.5px]';
+          wrapper.appendChild(dot);
+
+          var headerRow = document.createElement('div');
+          headerRow.className = 'flex flex-wrap justify-between items-baseline gap-2';
+          var title = document.createElement('h3');
+          title.className = 'font-serif text-lg font-semibold text-foreground';
+          title.textContent = item.title;
+          headerRow.appendChild(title);
+          var period = document.createElement('p');
+          period.className = 'text-xs text-muted-foreground shrink-0';
+          period.textContent = item.period;
+          headerRow.appendChild(period);
+          wrapper.appendChild(headerRow);
+
+          if (item.bullets && item.bullets.length) {
+            var ul = document.createElement('ul');
+            ul.className = 'mt-3 list-disc text-sm text-muted-foreground ml-4 space-y-1';
+            item.bullets.forEach(function (b) {
+              var li = document.createElement('li');
+              li.textContent = b;
+              ul.appendChild(li);
+            });
+            wrapper.appendChild(ul);
+          }
+
+          initiativesList.appendChild(wrapper);
         });
       }
 

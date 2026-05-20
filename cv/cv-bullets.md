@@ -6,7 +6,7 @@ Use this file as a pool of bullet points. Copy the lines you want into `main.tex
 
 ## Education
 
-### Universitat de Barcelona  (Feb 26 - Jun 26)
+### University of Barcelona (Feb 26 - Jun 26)
 
 - Semester abroad in Barcelona with spanish coursework
 - **Relevant Coursework:** Multivariate Statistics, Econometrics, Forecasting Methods, Spanish B2
@@ -48,6 +48,7 @@ Use this file as a pool of bullet points. Copy the lines you want into `main.tex
 - Processed customer service data with Python and developed Tableau dashboards to monitor claims and detect product faults, driving quicker resolutions
 - Conducted market analysis of carrier structures and return behavior to support strategic decision-making
 - Researched EPR and packaging compliance across multiple countries,restructuring internal processes
+# add a bullet point 
 - Led packaging audits in Germany and France, overseeing reporting and auditprocedures
 - Revamped Webshop Return Communication by performing an extensiveContentsquare analysis, streamlining the process and FAQs in collaborationwith developers
 - Weekly Operational KPI Reporting and 3PL Performance Monitoring
@@ -97,7 +98,7 @@ Tools used: R, LaTeX, GitHub
 
 ### Languages
 
-- German (native language), English (B2+), Spanish (Taking B2 course), French (B1)
+- German (native language), English (native-level), Spanish (B1/B2), French (A2)
 
 
 ### Technologies

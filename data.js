@@ -7,7 +7,7 @@ window.PORTFOLIO_DATA = {
       { flag: "🇩🇪", label: "German", level: "Native" },
       { flag: "🇬🇧", label: "English", level: "Native-level" },
       { flag: "🇪🇸", label: "Spanish", level: "B1/B2" },
-      { flag: "🇫🇷", label: "French", level: "B1" },
+      { flag: "🇫🇷", label: "French", level: "A2" },
     ],
   },
   links: {
@@ -15,17 +15,18 @@ window.PORTFOLIO_DATA = {
     linkedin: "https://www.linkedin.com/in/maximilian-frei-30915424b/",
     email: "maxifrei@protonmail.com",
     cvPdf: "assets/pdf/cv.pdf",
+    portfolio: "https://maxifrei6.github.io/maximilian-frei",
   },
   education: [
     {
       period: "Feb 2026 — Jun 2026",
-      institution: "Universitat de Barcelona",
-      degree: "Semester abroad — Spanish coursework",
+      institution: "University of Barcelona",
+      degree: "Semester abroad",
       tags: [
         "Multivariate Statistics",
         "Econometrics",
         "Forecasting Methods",
-        "Spanish B1/B2",
+        "Spanish B2",
       ],
     },
     {
@@ -39,43 +40,57 @@ window.PORTFOLIO_DATA = {
         "Statistical Inference",
         "Machine Learning",
         "Linear Modeling",
+        "Programming in R and Python",
       ],
     },
     {
       period: "Oct 2022 — Sep 2023",
       institution: "Technical University of Munich",
-      degree: "B.Sc. in Management & Technology — switched to Statistics",
+      degree: "B.Sc. in Management & Technology",
       tags: [
         "Management",
         "Finance",
         "Economics",
+        "Pivoted to statistics",
       ],
+    },
+    {
+      period: "Sep 2019 — Jul 2022",
+      institution: "Staatliche Fachoberschule Weilheim",
+      degree: "German Abitur",
     },
   ],
   experience: [
     {
-      period: "Apr 2025 — Feb 2026",
-      company: "Birkenstock",
-      role: "Working Student · Global Analytics & BI",
-      tags: ["Prophet", "XGBoost", "Python", "SQL", "Data Warehouse", "Geospatial"],
+      period: "Mar 2023 — Feb 2026",
+      company: "Birkenstock — Working Student",
+      role: "Global Analytics & BI",
+      tags: ["Prophet", "XGBoost", "Python", "SQL", "Tableau", "Snowflake"],
       bullets: [
-        "Created a lineage tracker from warehouse ingestion to downstream analytics (e.g. Tableau) to monitor dependencies and data access; supported Snowflake migration planning.",
-        "Built a progressive ensemble for order forecasting using Prophet, XGBoost, and other statistical models, and continuously improved predictive performance.",
-        "Performed correlation analysis on weather variables to select relevant features and integrated Weather API data to improve order forecast accuracy.",
-        "Built geospatial order mapping, enabling spatial analysis and revealing regional demand patterns to improve forecasting.",
-        "Optimized data warehouse pipelines and created tailored data sources for regional analysts.",
+        "Created a lineage tracker from data warehouse ingestion to downstream analytics (e.g. Tableau) to monitor dependencies and data access; supported Snowflake implementation.",
+        "Built a progressive ensemble for order forecasting using Prophet, XGBoost, and other statistical models, continuously improving predictive performance.",
+        "Improved order forecast accuracy by integrating Weather API data (via correlation-based feature selection) and building geospatial order mapping for regional demand patterns.",
+        "Built automated Google PageSpeed tracker to measure webshop replatforming performance.",
       ],
     },
     {
-      period: "Mar 2023 — Mar 2025",
-      company: "Birkenstock",
-      role: "Working Student · Digital Operations Europe",
-      tags: ["Python", "Tableau", "Contentsquare", "Analytics", "EPR", "Logistics"],
+      period: "Mar 2023 — Feb 2026",
+      company: "Birkenstock — Working Student",
+      role: "Digital Operations Europe",
+      tags: ["Python", "Tableau"],
       bullets: [
         "Automated invoice checks for inbound shipments using Python, saving 5 hours of manual work weekly.",
         "Processed customer service data with Python and developed Tableau dashboards to monitor claims and detect product faults, driving quicker resolutions.",
-        "Conducted analysis of carrier structures, return behavior, and EPR/packaging compliance across markets; led packaging audits in Germany and France.",
-        "Revamped webshop return communication via extensive Contentsquare analysis, streamlining the process and FAQs with developers.",
+      ],
+    },
+  ],
+  initiatives: [
+    {
+      period: "Sep 2021 — Aug 2022",
+      title: "Student Representative",
+      bullets: [
+        "Led a later school start initiative that reduced students' public-transport waiting times.",
+        "Organized yearbook, diploma awarding ceremony and clothing donation campaign for Ukraine.",
       ],
     },
   ],
@@ -86,7 +101,7 @@ window.PORTFOLIO_DATA = {
       title: "Microbial Network Communities",
       image: "assets/projects/network.png",
       teaser:
-        "Comparing Atlantic and Pacific marine microbial co-occurrence networks with community detection and consensus clustering.",
+        "Compared Atlantic and Pacific marine microbial co-occurrence networks using community detection and consensus clustering; interpreted modules with taxonomy and environmental variables for a seminar thesis.",
       github: "https://github.com/maxifrei6/microbial-network-communities",
       pdf: "assets/pdf/microbial-network-communities.pdf",
       abstract:
@@ -102,7 +117,7 @@ window.PORTFOLIO_DATA = {
       title: "Stroke Circadian Metabolomics",
       image: "assets/projects/stroke.png",
       teaser:
-        "Circadian patterns in metabolomic data from stroke patients using pathway scores, multiple imputation, and Lasso regression.",
+        "Analyzed circadian patterns in stroke patient metabolomics (LMU Hospital) using pathway scores, multiple imputation, and Lasso regression.",
       github: "https://github.com/maxifrei6/stroke-circadian",
       pdf: "assets/pdf/stroke-circadian.pdf",
       abstract:
@@ -151,12 +166,12 @@ window.PORTFOLIO_DATA = {
       "Python",
       "SQL",
       "LaTeX",
-      "Tableau (incl. Prep Builder)",
+      "Tableau",
       "Power BI",
-      "Contentsquare",
-      "Jira & Confluence",
       "GCP",
       "AWS",
+      "Contentsquare",
+      "Jira & Confluence",
     ],
   },
 };
