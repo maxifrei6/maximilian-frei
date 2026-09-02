@@ -1,7 +1,7 @@
 window.PORTFOLIO_DATA = {
   hero: {
     nameLines: ["Maximilian", "Frei"],
-    tagline: "Statistics student at LMU Munich, currently on a semester abroad at the University of Barcelona. Below you’ll find my projects and research, as well as my work at Birkenstock.",
+    tagline: "Statistics student at LMU Munich, currently returning from a semester abroad at the University of Barcelona. Below you’ll find my projects and research, as well as my work at Birkenstock.",
     profileImage: "assets/profile-image.jpg",
     languages: [
       { flag: "🇩🇪", label: "German", level: "Native" },
